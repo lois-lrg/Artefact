@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-areas: 
+        ". forward ."
+        "left stop right"
+        ". backward .";
+    gap: 10px;
+}
+
+button {
+    padding: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Positionner chaque bouton dans la grille */
+button:nth-child(1) { grid-area: forward; }  /* Avancer */
+button:nth-child(2) { grid-area: left; }     /* Gauche */
+button:nth-child(3) { grid-area: stop; }     /* Arrêter */
+button:nth-child(4) { grid-area: right; }    /* Droite */
+button:nth-child(5) { grid-area: backward; } /* Reculer */
